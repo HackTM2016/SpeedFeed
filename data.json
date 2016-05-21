@@ -1,0 +1,24 @@
+{
+    "speed": "0.0",
+    "acc_pedal_pos": "0.0",
+    "rpm": "556.0",
+    "yawrate": "0.0",
+
+    "latitude": "45.748739",
+    "longitude": "21.235474",
+
+    "traffic_participants": [
+        {
+            "vel_x": "-5.377235",
+            "vel_y": "1.828083",
+            "length": "0.0",
+            "height": "0.7"
+        },
+        {
+            "vel_x": "...",
+            "vel_y": "...",
+            "length": "...",
+            "height": "..."
+        }
+    ]
+}
