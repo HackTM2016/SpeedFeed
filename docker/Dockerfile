@@ -1,14 +1,14 @@
-FROM newhaircut/node-box:latest
+FROM python:3.5.1
 
-MAINTAINER NewHaircut Team
+MAINTAINER SpeedFeed Team
 
-EXPOSE 5858
 EXPOSE 8000
-EXPOSE 3000
 
-ADD ./package.json $APPDIR/package.json
-RUN npm install
+WORKDIR /code
 
-ADD . $APPDIR
+ADD ./requirements.pip /code/requirements.pip
+RUN pip install -r requirements.pip
 
-CMD npm start
+ADD . /code
+
+CMD python manage.py runserver 0.0.0.0:8000
