@@ -1,0 +1,9 @@
+apiDev:
+  image: zubia/service-user-api:latest
+  environment:
+      NODE_ENV: dev
+  ports:
+      - "80:8000"
+      - "5858:5858"
+  volumes:
+      - ../src:/opt/app/current/src
