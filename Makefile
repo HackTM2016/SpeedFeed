@@ -25,19 +25,19 @@ stop:
 	$(COMPOSE) stop
 
 shell:
-	$(COMPOSE) run app python manage.py shell
+	$(COMPOSE) run --rm app python manage.py shell
 
 bash:
-	$(COMPOSE) run app bash
+	$(COMPOSE) run --rm app bash
 
 migrations:
-	$(COMPOSE) run app python manage.py makemigrations
+	$(COMPOSE) run --rm app python manage.py makemigrations
 
 migrate:
-	$(COMPOSE) run app python manage.py migrate
+	$(COMPOSE) run --rm app python manage.py migrate
 
 test:
-	$(COMPOSE) run app python manage.py test --keepdb speedfeed
+	$(COMPOSE) run --rm app python manage.py test --keepdb speedfeed
 
 docker-build:
 	docker build -t $(NAME):$(VERSION) -f docker/Dockerfile .
