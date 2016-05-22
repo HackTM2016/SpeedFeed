@@ -1,9 +1,20 @@
-apiDev:
-  image: zubia/service-user-api:latest
-  environment:
-      NODE_ENV: dev
-  ports:
-      - "80:8000"
-      - "5858:5858"
-  volumes:
-      - ../src:/opt/app/current/src
+app:
+    image: developer94/speedfeed
+    environment:
+        NODE_ENV: dev
+    ports:
+        - "8000:8000"
+    volumes:
+        - ..:/code
+    links:
+        - db
+
+db:
+    image: mdillon/postgis
+    environment:
+        - POSTGRES_USER=speedfeed
+        - POSTGRES_PASSWORD=speedfeed
+    ports:
+        - "5432:5432"
+    volumes:
+        - /var/lib/postgres/data

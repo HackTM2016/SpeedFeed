@@ -1,3 +1,6 @@
 django
 djangorestframework
+django_extensions
 psycopg2
+django-fsm
+googlemaps
