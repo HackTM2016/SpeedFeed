@@ -15,7 +15,16 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from rest_framework.routers import SimpleRouter
+
+from speedfeed.views import RawViewSet
+
+router = SimpleRouter()
+
+router.register(r'payload', RawViewSet)
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-]
+] + router.urls
+

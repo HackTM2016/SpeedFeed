@@ -1,0 +1,5 @@
+ipython
+mock
+model_mommy
+graphviz
+-r requirements.pip
