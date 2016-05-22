@@ -205,7 +205,7 @@ long CModPlugIn::wxEVT_STEP(const wxPlg_Obj* arg_obj, wxPlg_Obj* ret_obj)
 	LOG_INFO("VehDyn.Yawrate: %.1f", VEH_DYN_Data.Yawrate.f_Value);
 	jsonObject[L"yawrate"] = (VEH_DYN_Data.Yawrate.e_SignalStatus == AERO_SIGNAL_STATUS_OK)
 								? json::value::number(VEH_DYN_Data.Yawrate.f_Value)
-								: json::value::number(4.6);
+								: json::value::number(0.0f);
 
    LOG_INFO("GPS_Data.f_Latitude: %f", RAD2DEG(GPS_Data.f_LatitudeRad));
    jsonObject[L"latitude"] = json::value::number(RAD2DEG(GPS_Data.f_LatitudeRad));
